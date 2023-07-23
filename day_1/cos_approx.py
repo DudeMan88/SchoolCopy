@@ -3,17 +3,28 @@
 
 cosine approximation function
 """
-__author__ = 'Qusai Al Shidi'
-__email__ = 'qusai@umich.edu'
+__author__ = 'Ben Osler'
+__email__ = 'osler.benjamin@gmail.com'
 
 from math import factorial
 from math import pi
 
 
-def cos_approx(x, accuracy=10):
-    """
-    """
-    return 
+def cos_approx(x, accuracy=10,lst=0):
+    add = []
+    if lst == 1:
+        add = [(((-1)**n)/factorial((2*n)))*(x**(2*n)) for n in range(accuracy)]
+    else:
+        for n in range(accuracy):
+            temp = (-1)**n
+            temp /= factorial(2*n)
+            temp *= (x**(2*n))
+            add.append(temp)
+        
+        
+        #add.append((((-1)**n)/factorial((2*n)))*(x**(2*n)))
+        
+    return sum(add)
 
 
 
