@@ -29,9 +29,10 @@ def parse_args():
     
     parser = argparse.ArgumentParser(description = 'My Example Code')
 
-    parser.add_argument('in_var_1', nargs = 1, \
+    parser.add_argument('V1', nargs = 1, \
                         help = 'Input Variable - only need one!')
-
+    parser.add_argument('in_var_1', nargs = 1, \
+                    help = 'Input Variable - only need one!')
     args = parser.parse_args()
 
     return args
@@ -45,7 +46,7 @@ args = parse_args()
 
 print(args)
 
-in_var = args.in_var_1
+in_var = args.V1
 
 print(in_var)
 
